@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import React, { useState } from 'react';
 import { Phone, MapPin, Clock } from 'lucide-react';
+import PageSEO from '../components/PageSEO';
 
 type FormState = 'idle' | 'submitting' | 'success' | 'error';
 
@@ -56,7 +57,12 @@ export default function ContactPage() {
 
   return (
     <div className="bg-white min-h-screen">
-      
+      <PageSEO
+        title="Contact Us | C&E Seamless Gutters — Free Estimate"
+        description="Request a free gutter, siding, or window estimate from C&E Seamless Gutters. Serving Iowa, Lake Charles, Sulphur & all of Calcasieu Parish. Call (337) 384-4417."
+        path="/contact"
+      />
+
       {/* Hero Section */}
       <section className="bg-white pt-[160px] md:pt-[170px] pb-16 md:pb-20 px-6 relative overflow-hidden flex items-center justify-center border-b border-gray-100">
         <div className="absolute top-[60%] -translate-y-1/2 left-1/2 -translate-x-1/2 opacity-[0.03] pointer-events-none w-full flex justify-center z-0">

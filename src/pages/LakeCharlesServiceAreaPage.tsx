@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { MapPin, Phone, ArrowRight, CheckCircle } from 'lucide-react';
+import PageSEO from '../components/PageSEO';
 
 const schema = {
   "@context": "https://schema.org",
@@ -59,6 +60,11 @@ const services = [
 export default function LakeCharlesServiceAreaPage() {
   return (
     <div className="bg-white min-h-screen">
+      <PageSEO
+        title={schema.name}
+        description={schema.description}
+        path="/service-area/lake-charles-la"
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 

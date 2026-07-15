@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { MapPin, Phone, ArrowRight, CheckCircle } from 'lucide-react';
+import PageSEO from '../components/PageSEO';
 
 const schema = {
   "@context": "https://schema.org",
@@ -44,6 +45,11 @@ const serviceAreas = ["Iowa, LA", "Lake Charles, LA", "Sulphur, LA", "Jennings, 
 export default function StormDamageRestorationPage() {
   return (
     <div className="bg-white min-h-screen">
+      <PageSEO
+        title={schema.name}
+        description={schema.description}
+        path="/services/storm-damage-restoration"
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 

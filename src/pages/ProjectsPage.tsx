@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { ZoomIn } from 'lucide-react';
 import { useState } from 'react';
 import Lightbox from '../components/Lightbox';
+import PageSEO from '../components/PageSEO';
 
 const projects = [
   "/IMG_9846-scaled.jpeg",
@@ -22,6 +23,11 @@ export default function ProjectsPage() {
 
   return (
     <div className="bg-white min-h-screen">
+      <PageSEO
+        title="Our Projects | C&E Seamless Gutters — Iowa, LA"
+        description="Browse completed seamless gutter, siding, and exterior projects by C&E Seamless Gutters throughout Iowa, Lake Charles, Sulphur, and Southwest Louisiana."
+        path="/projects"
+      />
       
       {/* Skinnier Hero Section */}
       <section className="bg-white pt-[160px] md:pt-[170px] pb-16 md:pb-20 px-6 relative overflow-hidden flex items-center justify-center border-b border-gray-100">

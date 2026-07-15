@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { MapPin, Phone, ArrowRight, CheckCircle } from 'lucide-react';
+import PageSEO from '../components/PageSEO';
 
 const schema = {
   "@context": "https://schema.org",
@@ -21,6 +22,11 @@ const serviceAreas = ["Iowa, LA", "Lake Charles, LA", "Sulphur, LA", "Jennings, 
 export default function FasciaBoardReplacementPage() {
   return (
     <div className="bg-white min-h-screen">
+      <PageSEO
+        title="Fascia Board Replacement in Iowa, LA | C&E Seamless Gutters"
+        description={schema.description}
+        path="/services/fascia-board-replacement"
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       <section className="bg-white pt-[160px] md:pt-[170px] pb-16 md:pb-20 px-6 relative overflow-hidden flex items-center justify-center border-b border-gray-100">

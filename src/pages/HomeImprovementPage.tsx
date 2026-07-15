@@ -2,18 +2,39 @@ import { motion } from 'motion/react';
 import { ZoomIn } from 'lucide-react';
 import { useState } from 'react';
 import Lightbox from '../components/Lightbox';
+import PageSEO from '../components/PageSEO';
 
 const gallery = [
   "/10-1.png",
   "/14.png",
 ];
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Home Improvement",
+  "name": "Home Improvement Services | C&E Seamless Gutters — Iowa, LA",
+  "description": "Vinyl siding, fascia board replacement, and storm damage restoration for homeowners in Iowa, Lake Charles, Sulphur, and Calcasieu Parish. Call (337) 384-4417.",
+  "provider": {
+    "@type": "HomeAndConstructionBusiness",
+    "@id": "https://www.candehomeservices.com/#business",
+    "name": "C&E Seamless Gutters",
+    "telephone": "(337) 384-4417"
+  }
+};
+
 export default function HomeImprovementPage() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   return (
     <div className="bg-white min-h-screen">
-      
+      <PageSEO
+        title="Home Improvement Services | C&E Seamless Gutters — Iowa, LA"
+        description={schema.description}
+        path="/services/home-improvement"
+      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+
       {/* Skinnier Hero Section */}
       <section className="bg-white pt-[160px] md:pt-[170px] pb-16 md:pb-20 px-6 relative overflow-hidden flex items-center justify-center border-b border-gray-100">
         <div className="absolute top-[60%] -translate-y-1/2 left-1/2 -translate-x-1/2 opacity-[0.03] pointer-events-none w-full flex justify-center z-0">

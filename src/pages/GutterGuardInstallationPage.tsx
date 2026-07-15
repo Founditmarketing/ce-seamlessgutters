@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { CheckCircle, MapPin, Phone, ArrowRight } from 'lucide-react';
+import PageSEO from '../components/PageSEO';
 
 const schema = {
   "@context": "https://schema.org",
@@ -63,6 +64,11 @@ const serviceAreas = ["Iowa, LA", "Lake Charles, LA", "Sulphur, LA", "Jennings, 
 export default function GutterGuardInstallationPage() {
   return (
     <div className="bg-white min-h-screen">
+      <PageSEO
+        title="Gutter Guard Installation in Iowa, LA | C&E Seamless Gutters"
+        description={schema.description}
+        path="/services/gutter-guard-installation"
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 

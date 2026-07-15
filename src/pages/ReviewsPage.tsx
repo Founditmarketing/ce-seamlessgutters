@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Star } from 'lucide-react';
+import PageSEO from '../components/PageSEO';
 
 const expandedReviews = [
   { id: 1, text: "Absolutely phenomenal work. The attention to detail on the corners is unmatched.", author: "Michael R.", location: "Iowa, LA", stars: 5 },
@@ -13,10 +14,25 @@ const expandedReviews = [
   { id: 9, text: "Professional quoting process, zero hidden fees, and absolute stellar craftsmanship. 10/10.", author: "William J.", location: "Sulphur, LA", stars: 5 }
 ];
 
+const reviewSchema = expandedReviews.map((r) => ({
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": { "@type": "HomeAndConstructionBusiness", "name": "C&E Seamless Gutters" },
+  "author": { "@type": "Person", "name": r.author },
+  "reviewRating": { "@type": "Rating", "ratingValue": r.stars, "bestRating": 5, "worstRating": 1 },
+  "reviewBody": r.text
+}));
+
 export default function ReviewsPage() {
   return (
     <div className="bg-white min-h-screen">
-      
+      <PageSEO
+        title="Client Reviews | C&E Seamless Gutters — Iowa, LA"
+        description="Read verified reviews from homeowners in Iowa, Lake Charles, Sulphur, and Calcasieu Parish who chose C&E Seamless Gutters for gutter and exterior services."
+        path="/reviews"
+      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
+
       {/* Hero Section (Why Us Template) */}
       <section className="bg-white pt-[160px] md:pt-[170px] pb-16 md:pb-20 px-6 relative overflow-hidden flex items-center justify-center border-b border-gray-100">
         <div className="absolute top-[60%] -translate-y-1/2 left-1/2 -translate-x-1/2 opacity-[0.03] pointer-events-none w-full flex justify-center z-0">
